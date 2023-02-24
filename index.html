@@ -1,0 +1,108 @@
+<html><head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Radio+Canada:400,400i,700">
+	
+	<style>
+		body {
+			font-family:"Radio Canada";
+			background-color:#121212;
+		}
+
+		
+.holder{
+	border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;line-height:10%;
+}
+
+.frame{
+	width: 100%;
+	height: 100%;
+}
+
+a {
+	color:white
+}
+
+.playButton{
+	border:none;
+	border-radius:0px;
+	font-size:20px;
+	padding:10px;
+	padding-left:30px;
+	padding-right:30px;
+	background-color:black;
+	color:white;
+	font-family:"Radio Canada";
+	
+	transition: all .2s ease-in-out; 
+}
+
+.playButton:hover { 
+transform: scale(1.1); 
+}
+
+.playFrame{
+	color:white;
+	line-height:0%;
+	background-color:#121212;
+	display:flex;
+ flex-direction:column;
+ align-items:center;
+ justify-content:center;
+	position: absolute;
+	padding:0px;
+	margin:0;
+	width: 101%;
+	height: 101%;
+}
+	</style>
+</head>
+
+<body>
+	
+	<div class="holder" id="holder" style="display: none;">
+		<div class="zind2" style="background-color:none;" id="warningLabels"></div>
+		
+		<div id="playFrame" class="playFrame">
+			<h3 id="loadingLabel" style="display: none;">loading</h3>
+			<button id="playButton" class="playButton" style="display: block;" onclick="startGame()">PLAY GAME</button>
+			<h5 id="hostedAd" style="display: block;">Hosted on <a href="https://bit.ly/bobs-games" target="_blank">Bob's Game Shack.</a></h5>
+			<font id="gameid" style="font-size:10px;">id: #tanuki-sunset</font></div>
+</div>
+	
+	<iframe id="008268032" style="display: block; border: hidden; overflow: hidden; position: absolute; inset: 0px 0% 0%; width: 100%; height: 100%;" src="https://chiefkeefplayboicartifanficnohomo.github.io/projects/tanuki-sunset/index.html"></iframe>
+	
+	<script>
+		var myFrame = document.getElementById("008268032")
+		let startGame = function(){
+			document.getElementById("holder").style.display = "none";
+			document.getElementById("008268032").style.display = "block";
+			var url = "https://chiefkeefplayboicartifanficnohomo.github.io/projects/" + window.location.hash.slice(1)
+			url = url + "/index.html"
+			myFrame.src = url
+}
+		
+		window.onload = function(){
+			<!--if (window.location == window.parent.location){
+			<!--	document.getElementById("playFrame").innerHTML=("<h1>"+window.location.hash.replace('#','')+"</h1><h2>This is an embeddable page.</h2><h3><a href='https://bit.ly/bobs-games' style='text-decoration:none;color:#ffbb00;'>Bob's Game Shack links</a></h3>")		
+		<!--	}
+			
+			//WARNINGS
+			var xhr = new XMLHttpRequest();
+			var url = ('https://chiefkeefplayboicartifanficnohomo.github.io/projects/'+window.location.hash.replace("#","")+'/warns.txt')
+				xhr.open('GET', url, false);
+				xhr.send(null);
+				if (xhr.status === 200) {
+					var stats = xhr.responseText.split("%");
+					for (let x in stats) {
+						document.getElementById("warningLabels").innerHTML+=("<h3 class='zind2' style='background-color:red;border:none;border-radius:0px;padding:15px;text-align:center;width:80%;margin:5px;margin-left:10%;margin-right:10%;color:white;z-index:2;'>"+stats[x].replace("(!)","⚠")+"</h3>")
+					}
+				}
+			
+			document.getElementById("gameid").innerHTML = "id: " + window.location.hash
+			document.getElementById("loadingLabel").style.display = "none"
+			document.getElementById("hostedAd").style.display = "block"
+			document.getElementById("playButton").style.display = "block"
+		}
+	</script>
+
+
+</body></html>
